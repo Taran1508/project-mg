@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="google.css">
+    <title>Student Search</title>
+</head>
+<body>
+    <script async src="https://cse.google.com/cse.js?cx=8667125b5139a4c1d">
+    </script>
+    <nav>
+        <div class="brandname"><p><a href="index.html">STARUPS</a></p></div>
+        <ul>
+        <li><i class='bx bx-search ico'></i><a href="google.html"> Google Search</a></li>
+        <li><i class='bx bxs-file-doc ico' ></i><a href="research.html">Research & Doc</a></li>
+        <li><i class='bx bxs-videos ico' ></i><a href="reels.html">Reels</a></li>
+        <li><i class='bx bx-user-circle ico'></i><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <section><div class="gcse-search"></div></section>
+
+    <!-- javascript -->
+    <script>
+        // Get the current URL path
+        const currentPath = window.location.pathname;
+
+        // Select all navigation links
+        const navLinks = document.querySelectorAll('nav ul li');
+
+        // Loop through the links and add the active class based on the current URL
+        navLinks.forEach(link => {
+            const anchor = link.querySelector('a');
+            if (anchor.href.includes(currentPath)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

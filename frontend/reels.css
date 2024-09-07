@@ -1,0 +1,139 @@
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+nav{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.brandname{
+    font-family: sans-serif;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.brandname a{
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+nav ul li {
+    font-family: sans-serif !important;
+    display: flex !important;
+    list-style-type: none !important;
+    margin-left: -15px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    width: 210px !important;
+    height: 30px !important;
+    font-size: 17px !important;
+    align-items: center !important;
+    cursor: pointer !important;
+}
+
+nav ul li:hover {
+    margin-left: -25px !important;
+    padding-left: 10px !important;
+    background-color: #f1f1f1 !important;
+    transition: all 0.3s ease !important;
+    border-radius: 5px !important;
+}
+
+.ico{
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+    color: black;
+}
+
+.active {
+    font-weight: bold;
+    color: #007bff; /* You can style it however you want */
+}
+a{
+    font-size: 15px;
+    margin-left: 8px;
+    color: black;
+}
+#container-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+section{
+    margin-left: 250px;
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content-box{
+    display: flex;
+    width: 385px;
+    height: 600px;
+}
+
+.video{
+    width: 340px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    width: 30px;
+    height: 600px;
+}
+
+.options span{
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+#loading {
+    display: none;
+    text-align: center;
+    margin: 20px 0px;
+    margin-left: 198px;
+}
+
+#loading span {
+    font-size: 18px;
+    color: #666;
+}
+.spinner-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+  }
+  
+  @keyframes spinner-border {
+    100% {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="reels.css">
+    <title>reels</title>
+</head>
+<body>
+    <nav>
+        <div class="brandname"><p><a href="index.html">STARUPS</a></p></div>
+        <ul class="custom-nav-list">
+        <li><i class='bx bx-search ico'></i><a href="google.html"> Google Search</a></li>
+        <li><i class='bx bxs-file-doc ico' ></i><a href="research.html">Research & Doc</a></li>
+        <li><i class='bx bxs-videos ico' ></i><a href="reels.html">Reels</a></li>
+        <li><i class='bx bx-user-circle ico'></i><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <div id="container-box">
+        <section>
+            <div class="content-box">
+                <div class="video">
+                    <video width="340" height="600" controls autoplay>
+                        <source src="vdo.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                      </video>
+                </div>
+                <div class="options">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <span><i class="fa-regular fa-comment"></i></span>
+                    <span><i class="fa-regular fa-paper-plane"></i></span>
+                    <span><i class="fa-regular fa-flag"></i></i></span>
+                    <span><i class="fa-regular fa-circle-user"></i></span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="loading">
+        <span class="spinner-border"></span>
+    </div>
+    <script>
+        // Get the current URL path
+        const currentPath = window.location.pathname;
+
+        // Select all navigation links
+        const navLinks = document.querySelectorAll('nav ul li');
+
+        // Loop through the links and add the active class based on the current URL
+        navLinks.forEach(link => {
+            const anchor = link.querySelector('a');
+            if (anchor.href.includes(currentPath)) {
+                link.classList.add('active');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('container-box');
+            const loading = document.getElementById('loading');
+
+            // Function to create and append a section
+            const createSection = () => {
+                const section = document.createElement('section');
+                section.innerHTML = `
+                    <div class="content-box">
+                        <div class="video">
+                            <video width="340" height="600" controls>
+                            <source src="vdo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="options">
+                            <span><i class="fa-regular fa-heart"></i></span>
+                            <span><i class="fa-regular fa-comment"></i></span>
+                            <span><i class="fa-regular fa-paper-plane"></i></span>
+                            <span><i class="fa-regular fa-flag"></i></span>
+                            <span><i class="fa-regular fa-circle-user"></i></span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(section);
+            };
+
+            // Function to generate multiple sections (e.g., infinite)
+            const generateSections = (count) => {
+                for (let i = 0; i < count; i++) {
+                    createSection();
+                }
+            };
+
+            // Generate the initial set of sections
+            generateSections(10);
+
+            // Infinite scroll logic
+            let isFetching = false; // To avoid multiple simultaneous requests
+            window.addEventListener('scroll', () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !isFetching) {
+                    isFetching = true;
+                    loading.style.display = 'block';
+
+                    // Simulate loading more content
+                    setTimeout(() => {
+                        generateSections(5); // Load more sections when scrolled to bottom
+                        isFetching = false;
+                        loading.style.display = 'none';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

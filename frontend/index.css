@@ -1,0 +1,76 @@
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+nav{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.brandname{
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+
+.brandname a{
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+ul li{
+    font-family: sans-serif;
+    display: flex;
+    list-style-type: none;
+    margin-left: -15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    /* border: 1px solid rgb(133, 132, 132); */
+    width: 210px;
+    height: 30px;
+    font-size: 17px;
+    align-items: center;
+    cursor: pointer;
+
+}
+li:hover{
+    margin-left: -25px;
+    padding-left: 10px ;
+    /* background-color: rgba(246, 245, 245, 0.932); */
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+
+}
+.ico{
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+    color: black;
+}
+
+a{
+    font-size: 15px;
+    margin-left: 8px;
+    color: black;
+}
+section{
+    margin-left: 260px;
+    padding: 20px;
+}
+.active {
+    font-weight: bold;
+    color: #007bff; /* You can style it however you want */
+}
+
+
+
+
