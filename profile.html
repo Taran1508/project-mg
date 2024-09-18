@@ -19,27 +19,188 @@
         </ul>
     </nav>
     <section>
-        <div class="upper">
-            <span class="one"><img src="" alt=""></span>
-            <div class="box">
-                <div class="row-items">
-                    <span class="two">John_1508</span>
-                    <span class="three"><i class="fa-solid fa-gear"></i></span>
+        <!-- <iframe src="doc.html" height="100%" width="100%"></iframe> -->
+        <div class="container">
+            <div class="main-content">
+                <div class="column left">
+                    <div class="profile-picture">
+                        <div class="profile-pic-container">
+                            <img id="profile-pic" src="pfp.jpg" alt="Profile Picture" class="profile-pic">
+                            <span class="profile-pic-placeholder">Profile Picture</span>
+                        </div>
+                        <label for="profile-pic-upload" class="profile-pic-button">Upload Profile Picture</label>
+                        <input type="file" id="profile-pic-upload" name="profile-pic-upload" class="profile-pic-input" accept="image/*" style="display: none;">
+                    </div>
+                    
+                    <h2><b>Fill Section</b></h2>
+                    <ul>
+                        <li><a href="#personal-info">Personal Information</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#work-experience">Work Experience</a></li>
+                        <li><a href="#activities">Extracurricular Activities</a></li>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#social-media">Social Media Links</a></li>
+                    </ul>
                 </div>
-                <div class="row-items2">
-                    <span class="four">0 Posts</span>
-                    <!-- <span class="four"></span>
-                    <span class="four"></span> -->
+        
+                <div class="column middle">
+                    <!-- Personal Information Section -->
+                    <div id="personal-info" class="section">
+                        <h2>Personal Information</h2>
+                        <div class="personal-info-form">
+                            <!-- Name -->
+                            <label for="name" class="inline-label">Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" class="inline-input" required><br>
+                    
+                            <!-- Date of Birth -->
+                            <label for="dob" class="inline-label">Date of Birth:</label>
+                            <input type="date" id="dob" name="dob" class="inline-input" required><br>
+                    
+                            <!-- Gender -->
+                            <label for="gender" class="inline-label">Gender:</label>
+                            <select id="gender" name="gender" class="inline-input" required>
+                                <option value="" disabled selected>Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select><br>
+                    
+                            <!-- Nationality -->
+                            <label for="nationality" class="inline-label">Nationality:</label>
+                            <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" class="inline-input" required><br><br>
+                        </div>
+                    </div>
+        
+                    <!-- Education Section -->
+                    <div id="education" class="section">
+                        <h2>Education</h2>
+                        <div id="education-template" class="education-record">
+                            <label for="school" class="inline-label">School:</label>
+                            <input type="text" id="school" name="school" placeholder="Enter school" class="inline-input"><br>
+        
+                            <label for="degree" class="inline-label">Degree:</label>
+                            <input type="text" id="degree" name="degree" placeholder="Enter degree" class="inline-input"><br>
+        
+                            <label for="start-month">Start Date:</label>
+                            <input type="date" id="start-month" name="start-month" placeholder="MM/YYYY" pattern="\d{2}/\d{4}" required><br>
+        
+                            <label for="end-month">End Date:</label>
+                            <input type="date" id="end-month" name="end-month" placeholder="MM/YYYY" pattern="\d{2}/\d{4}" required><br>
+        
+                            <label for="gpa" class="inline-label">CGPA/Percentage:</label>
+                            <input type="text" id="gpa" name="gpa" placeholder="Enter CGPA or Percentage" class="inline-input"><br>
+                        </div>
+        
+                        <div id="education-container"></div>
+        
+                        <button type="button" id="add-education-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-education-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
+        
+                    <!-- Projects Section -->
+                    <div id="projects" class="section">
+                        <h2>Projects</h2>
+                        <div id="project-template" class="project-record">
+                            <label for="project-name" class="inline-label">Project Name:</label>
+                            <input type="text" id="project-name" name="project-name" placeholder="Enter project name" class="inline-input"><br>
+        
+                            <label for="project-description" class="inline-label">Description:</label>
+                            <input type="text" id="project-description" name="project-description" placeholder="Enter project description" class="inline-input"><br>
+                        </div>
+        
+                        <div id="project-container"></div>
+        
+                        <button type="button" id="add-project-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-project-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
+        
+                    <!-- Work Experience Section -->
+                    <div id="work-experience" class="section">
+                        <h2>Work Experience</h2>
+                        <div id="work-template" class="work-record">
+                            <label for="company-name" class="inline-label">Company Name:</label>
+                            <input type="text" id="company-name" name="company-name" placeholder="Enter company name" class="inline-input"><br>
+        
+                            <label for="job-title" class="inline-label">Job Title:</label>
+                            <input type="text" id="job-title" name="job-title" placeholder="Enter job title" class="inline-input"><br>
+        
+                            <label for="work-start-month">Start Date:</label>
+                            <input type="date" id="work-start-month" name="work-start-month" placeholder="MM/YYYY" pattern="\d{2}/\d{4}" required><br>
+        
+                            <label for="work-end-month">End Date:</label>
+                            <input type="date" id="work-end-month" name="work-end-month" placeholder="MM/YYYY" pattern="\d{2}/\d{4}" required><br>
+                        </div>
+        
+                        <div id="work-container"></div>
+        
+                        <button type="button" id="add-work-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-work-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
+        
+                    <!-- Skills Section -->
+                    <div id="skills" class="section">
+                        <h2>Key Skills</h2>
+                        <div id="skills-template" class="skill-record">
+                            <label for="skill-name" class="inline-label">Skill:</label>
+                            <input type="text" id="skill-name" name="skill-name" placeholder="Enter skill" class="inline-input"><br>
+                        </div>
+                        <div id="skills-container"></div>
+                        <button type="button" id="add-skill-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-skill-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
+                    
+                    <!-- Extracurricular Activities Section -->
+                    <div id="activities" class="section">
+                        <h2>Extracurricular Activities</h2>
+                        <div id="activity-template" class="activity-record">
+                            <label for="activity-name" class="inline-label">Activity:</label>
+                            <input type="text" id="activity-name" name="activity-name" placeholder="Enter activity" class="inline-input"><br>
+                        </div>
+                        <div id="activities-container"></div>
+                        <button type="button" id="add-activity-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-activity-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
+                    
+                    <!-- Achievements Section -->
+                    <div id="achievements" class="section">
+                        <h2>Achievements</h2>
+                        <div id="achievement-template" class="achievement-record">
+                            <label for="achievement" class="inline-label">Achievement:</label>
+                            <input type="text" id="achievement" name="achievement" placeholder="Enter achievement" class="inline-input"><br>
+                        </div>
+                        <div id="achievements-container"></div>
+                        <button type="button" id="add-achievement-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-achievement-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
+                    
+                    <!-- Social Media Links Section -->
+                    <div id="social-media" class="section">
+                        <h2>Social Media Links</h2>
+                        <div id="social-media-template" class="social-media-record">
+                            <label for="social-media-name" class="inline-label">Platform:</label>
+                            <input type="text" id="social-media-name" name="social-media-name" placeholder="Enter social media platform" class="inline-input"><br>
+        
+                            <label for="social-media-link" class="inline-label">Link:</label>
+                            <input type="text" id="social-media-link" name="social-media-link" placeholder="Enter link" class="inline-input"><br>
+                        </div>
+                        <div id="social-media-container"></div>
+                        <button type="button" id="add-social-media-btn" class="save-button">Add</button>
+                        <button type="button" id="remove-social-media-btn" class="remove-button">Remove</button>
+                        <button type="submit" class="save-button">Save All</button>
+                    </div>
                 </div>
-                <span class="fiv"></span>
             </div>
         </div>
-        <div class="lower">
-
-        </div>
-        <!-- <footer>
-            <p>&copy; 2024 StarUPS. All rights reserved.</p>
-    </footer> -->
+        
     </section>
     
 
@@ -59,5 +220,6 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
